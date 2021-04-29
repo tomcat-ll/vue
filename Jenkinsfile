@@ -28,10 +28,10 @@ pipeline {
                           echo "开始编译打包1111"
                           sh "npm install"
                           sh "npm run build"
-                          sh "docker build ./ -t 192.168.5.101:85/library/${project_name}:latest"
+                          sh "docker build  -t 192.168.5.101:85/library/${project_name}:latest ."
 
                           //vue项目打包  npm run build
-                          //前端构建
+                          //前端构建ll
                           //k8s启动yml文件
                           /* echo "镜像打标签"
                           sh "docker tag ${project_name}:latest 192.168.5.101:85/library/${project_name}:latest " */
