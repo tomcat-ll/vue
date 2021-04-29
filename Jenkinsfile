@@ -11,10 +11,11 @@ pipeline {
     stages {
         stage(‘pipeline开始拉取‘) {
         steps{
-         echo "清理workspace"
+         /* echo "清理workspace"
           sh("ls -al ${env.WORKNSPACE}")
           deleteDir()  // clean up current work directory
-          sh("ls -al ${env.WORKSPACE}")
+          sh("ls -al ${env.WORKSPACE}")*/
+
                   echo "开始拉取"
                  checkout([$class: 'GitSCM', branches: [[name: '*/'+env.BRANCH_NAME]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b1ef8492-1493-4a99-bc34-128736e69203', url: "${github}"]]])
 
