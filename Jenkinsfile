@@ -25,7 +25,7 @@ pipeline {
          stage(‘pipeline编译打包‘) {
          steps{
                           echo "开始编译打包1111"
-                          //sh "npm install"
+                          sh "npm install"
                           sh "npm run build"
                           //检查下之前docker中是否存在已有的容器和镜像，有则删除
                           echo '****************************** delete container and image... ******************************'
