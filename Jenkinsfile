@@ -26,13 +26,15 @@ pipeline {
          stage(‘pipeline编译打包‘) {
          steps{
                           echo "开始编译打包1111"
+                          sh "npm install"
                           sh "npm run build"
+                          sh "docker build ./ -t 192.168.5.101:85/library/${project_name}:latest"
 
                           //vue项目打包  npm run build
                           //前端构建
                           //k8s启动yml文件
-                          echo "上传镜像"
-                          sh "docker tag ${project_name}:latest 192.168.5.101:85/library/${project_name}:latest "
+                          /* echo "镜像打标签"
+                          sh "docker tag ${project_name}:latest 192.168.5.101:85/library/${project_name}:latest " */
                           echo "镜像推送harbor"
                           //def harbor_auth="6d69019c-b8e6-49a8-8563-1f81f9da8050"
                           withCredentials([usernamePassword(credentialsId: '6d69019c-b8e6-49a8-8563-1f81f9da8050', passwordVariable: 'password', usernameVariable: 'username')]) {
