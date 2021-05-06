@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
     //项目名
-     name='VueDemo_Sell_Eleme'
+     name='vue'
     //仓库地址
      github='https://github.com/tomcat-ll/vue.git'
     //jenkins远程服务器
