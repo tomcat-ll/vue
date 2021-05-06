@@ -32,9 +32,9 @@ pipeline {
                                           sh 'docker ps -a|grep $name|awk \'{print $1}\'|xargs -i docker stop {}|xargs -i docker rm {}'
                                           sh 'docker images|grep $name|grep dev|awk \'{print $3}\'|xargs -i docker rmi {}'
                                           //构建镜像
-                          sh "docker build  -t ${project_name}:latest ."
+                          sh "docker build  -t ${name}:latest ."
                           //启动容器
-                           sh 'docker run -d -p 81:80 --restart=always --name $name ${project_name}:latest'
+                           sh 'docker run -d -p 81:80 --restart=always --name $name ${name}:latest'
                           }
 
                         }
