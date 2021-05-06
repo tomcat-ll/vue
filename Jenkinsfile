@@ -49,6 +49,7 @@ pipeline {
                           }
 
                         }
+                    }
          stage("远程拉取发布"){
          steps{
              script{
@@ -62,7 +63,6 @@ pipeline {
 
         }
         }
-
         }
-}
+        }
 }
