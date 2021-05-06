@@ -42,7 +42,7 @@ pipeline {
                           //登录harbor
                            sh " docker login -u ${username} -p ${password} 192.168.5.101:85  "
                            //镜像上传
-                           sh "docker push 192.168.5.101:85/library/${project_name}:latest"
+                           sh "docker push 192.168.5.101:85/library/${name}:latest"
                            sh  "echo 镜像上传成功"
                         /*   //启动容器
                            sh 'docker run -d -p 81:80 --restart=always --name $name ${name}:latest' */
