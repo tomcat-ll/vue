@@ -26,7 +26,11 @@ pipeline {
          steps{
                           echo "开始编译打包1111"
                           sh "npm install"
-                          sh "npm run build"
+                           if(env.BRANCH_NAME == 'master'){
+                          sh "npm run build--prod"
+                          }else{
+                           sh "npm run build--dev"
+                          }
                           //检查下之前docker中是否存在已有的容器和镜像，有则删除
                         /*   echo '****************************** delete container and image... ******************************'
                                           sh 'docker ps -a|grep $name|awk \'{print $1}\'|xargs -i docker stop {}|xargs -i docker rm {}'
