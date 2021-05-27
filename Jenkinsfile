@@ -28,9 +28,9 @@ pipeline {
                           sh "npm install"
                           script{
                            if(env.BRANCH_NAME == 'master'){
-                          sh "npm run build--prod"
+                          sh "npm run build --prod"
                           }else{
-                           sh "npm run build--dev"
+                           sh "npm run build --dev"
                           }
                           }
                           //检查下之前docker中是否存在已有的容器和镜像，有则删除
