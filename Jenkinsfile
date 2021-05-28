@@ -7,7 +7,7 @@ pipeline {
      github='https://github.com/tomcat-ll/vue.git'
     //jenkins远程服务器
      server_name='103_server'
-    sever_port = '81'}
+    sever_port = '80'}
     stages {
         stage(‘pipeline开始拉取‘) {
         steps{
